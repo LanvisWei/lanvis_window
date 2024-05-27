@@ -1,6 +1,5 @@
 # 第二次作業
 [第二次練習](https://github.com/LanvisWei/lanvis_window/blob/main/homework/issue6/homework.ipynb)
-
 將位址使用requests.get 賦值response  
 -response:Response  
 -from requests import Response  
