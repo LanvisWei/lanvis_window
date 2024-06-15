@@ -43,9 +43,9 @@ def load_data()->list[dict]:
     data = youbike_data.model_dump()
     return data
 
-class FilterDate():
+class FilterDate(object):
     @staticmethod
-    def get_selected_coordinate(sna:str,data:list[dict])-> info:
+    def get_selected_coordinate(sna:str,data:list[dict])-> Info:
         right_list:list[dict] = list(filter(lambda item:True if item['sna']==sna else False ,data))
         data:dict = right_list[0]
         return Info.model_validate(data)
