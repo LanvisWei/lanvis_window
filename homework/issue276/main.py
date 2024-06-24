@@ -20,9 +20,11 @@ def main():
                 lat REAL,
                 lng REAL,
                 act boolean,
-                CONSTRAINT unique_sna_updatetime UNIQUE (sna, updateTime)
+                CONSTRAINT unique_sna_updatetime UNIQUE (sna, updateTime)  
             );
             '''
+            ## CONSTRAINT unique_sna_updatetime UNIQUE (sna, updateTime) 
+
             cursor.execute(sql)
 
         all_data: list[dict] = data.load_data()
@@ -33,6 +35,9 @@ def main():
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (sna, updatetime) DO NOTHING;
             '''
+
+            ## ON CONFLICT (sna, updatetime) DO NOTHING;
+
             for site in all_data:
                 cursor.execute(insert_sql, (
                     site['sna'],
