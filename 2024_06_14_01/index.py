@@ -1,8 +1,8 @@
 from ttkthemes import ThemedTk
 import tkinter as tk
 from tkinter import ttk, messagebox
-import MLproject_Solar_Irradiance.data as data
-from MLproject_Solar_Irradiance.data import FilterDate , Info
+import MLproject_Solar_Irradiance.weather.data as data
+from MLproject_Solar_Irradiance.weather.data import FilterDate , Info
 from tools import CustomMessagebox
 
 
