@@ -1,7 +1,6 @@
-from flask import Flask ,url_for
+from flask import Flask,url_for
 
 app = Flask(__name__)
-
 @app.route('/')
 def index():
     return 'index'
@@ -17,5 +16,5 @@ def profile(username):
 with app.test_request_context():
     print(url_for('index'))
     print(url_for('login'))
-    print(url_for('login', name='孟德', password='1234'))
-    print(url_for('profile', username='曹大哥'))
+    print(url_for('login', name='robert', password='1234'))
+    print(url_for('profile', username='John Doe'))
