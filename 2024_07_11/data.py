@@ -13,5 +13,5 @@ def get_areas():
                 From youbike;
             '''
             cursor.execute(sql)
-            print(cursor.fetchall())
+            return cursor.fetchall()
     conn.close()

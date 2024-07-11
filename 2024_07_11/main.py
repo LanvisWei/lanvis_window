@@ -8,5 +8,7 @@ def index():
     #  return render_template('index.html.jinja',left=content)
 
     # print(data.get_areas())
-    print(list(map(lambda value:value[0] data.get_areas())))
-    return render_template('index.html.jinja')
+   #print(list(map(lambda value:value[0],data.get_areas())))
+    areas = [tup[0] for tup in data.get_areas()]
+    print(areas)
+    return render_template('index.html.jinja', areas=areas)
