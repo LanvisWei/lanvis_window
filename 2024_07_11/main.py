@@ -15,9 +15,9 @@ def index():
     selected_area='士林區' if selected_area is None else selected_area
         # print('首插')
         # return render_template('index.html.jinja', areas=areas)
-    return render_template('index.html.jinja', areas=areas, area='士林區')
+    # return render_template('index.html.jinja', areas=areas, area='士林區')
     # print(areas)
     # return render_template('index.html.jinja', areas=areas)
     # else:
     #     # print(selected_area)
-    #     return render_template('index.html.jinja', areas=area, show_area=selected_area)
+    return render_template('index.html.jinja', areas=areas, show_area=selected_area)
