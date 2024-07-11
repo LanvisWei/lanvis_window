@@ -1,4 +1,13 @@
 {% extends 'base.html.jinja' %}
 {% block title%}
-曹氏宗親會TVDI分部
+曹氏宗親會TVDI分部 - {{super()}}
+{% endblock %}
+
+{% block head%}
+{{ super() }}
+<style type"text/css">
+    body {
+        background-color: blue;
+    }
+</style>
 {% endblock %}
