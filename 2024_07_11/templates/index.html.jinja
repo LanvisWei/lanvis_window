@@ -1,21 +1,21 @@
 {% extends 'base.html.jinja' %}
 
-{% block title%} 
+{% block title%}
 {{ super() }} - 首頁
 {% endblock %}
 
 {% block head%}
 {{ super() }}
 <style type"text/css">
-body {
-    background-color: blue;
-}
+    body {
+        background-color: blue;
+    }
 </style>
 {% endblock %}
 
 
 {# {% block left_content%}
-{{ left | striptags | title  }}
+{{ left | striptags | title }}
 {% endblock%} #}
 
 {#
@@ -69,7 +69,12 @@ body {
             Nostrud non amet culpa do magna sit velit anim nostrud pariatur esse. Esse amet dolor in officia aute irure
             labore sit occaecat exercitation consequat. Dolore tempor ipsum deserunt fugiat velit exercitation tempor
             veniam laborum. #}
-            {{ areas | join(',')}}
+
+            {# {{ areas | join(',')}} #}
+
+            {% for area in areas %}
+            <h6>{{area}}</h6>
+            {% endfor %}
         </div>
         <div class="col-8" style="background-color:bisque">
             Id non laborum occaecat consequat dolore commodo occaecat reprehenderit officia minim labore aliquip
