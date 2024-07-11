@@ -38,7 +38,7 @@
         </div>
       </div>
     </nav>
-    <main class="container text-center">
+    {# <main class="container text-center">
       
         <div class="row">
           <div class="col-4" style="background-color:beige">
@@ -50,6 +50,10 @@
             {% endblock %}
           </div>
         </div>      
+    </main> #}
+    <main>
+    {% block main%}
+    {% endblock %}
     </main>
   </div>
 </body>
