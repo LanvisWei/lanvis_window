@@ -13,6 +13,7 @@ def index():
     areas = [tup[0] for tup in data.get_areas()]
     # if selected_area is None:
     selected_area='士林區' if selected_area is None else selected_area
+    detail_snaes = data.get_snaOfArea(area=selected_area)
         # print('首插')
         # return render_template('index.html.jinja', areas=areas)
     # return render_template('index.html.jinja', areas=areas, area='士林區')
@@ -20,4 +21,5 @@ def index():
     # return render_template('index.html.jinja', areas=areas)
     # else:
     #     # print(selected_area)
-    return render_template('index.html.jinja', areas=areas, show_area=selected_area)
+    # return render_template('index.html.jinja', areas=areas, show_area=selected_area)
+    return render_template('index.html.jinja',areas=areas,show_area=selected_area,detail_snaes=detail_snaes)  
