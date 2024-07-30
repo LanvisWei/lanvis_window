@@ -1,7 +1,8 @@
-from flask import Blueprint,render_template, request
+from flask import Blueprint,render_template,request
 from flask_wtf import FlaskForm
-from wtforms import EmailField, PasswordField
-from wtforms.validators import validateUser
+from wtforms import EmailField,PasswordField
+from wtforms.validators import DataRequired,Length
+from .datasource import validateUser
 
 auth_blueprint = Blueprint('auth',__name__)
 
