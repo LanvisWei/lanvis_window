@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS 使用者(
 );
 
 INSERT INTO 使用者(姓名,電子郵件,密碼) 
-VALUES('robert','roberthsu@gmail.com','12345')
+VALUES('lanvis','lanvis.wei@gmail.com','12345')
 
 
 SELECT *
