@@ -5,6 +5,5 @@ python-dotenv
 gunicorn
 pandas
 flask
-dashborad
 werkzeug
 plotly
