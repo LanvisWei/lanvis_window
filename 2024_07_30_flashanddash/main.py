@@ -4,8 +4,11 @@ from werkzeug.serving import run_simple
 from dashboard.board1 import app1
 from dashboard.board2 import app2
 import data
+from auth.main import auth_blueprint
 
 app = Flask(__name__)
+app.register_blueprint(auth_blueprint)
+
 application = DispatcherMiddleware(app,{
     "/dashboard/app1":app1.server,
     "/dashboard/app2":app2.server
@@ -28,7 +31,9 @@ def index1():
     #detail_snaes -> 該行政區所有站點資訊   
     return render_template('index1.html.jinja',areas=areas,show_area=selected_area,detail_snaes=detail_snaes)    
     
-    
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('error.html.jinja'), 404    
 
 
 if __name__ == "__main__":
