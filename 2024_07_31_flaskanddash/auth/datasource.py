@@ -5,19 +5,21 @@ from werkzeug.security import check_password_hash
 import os
 load_dotenv()
 
-class invalidEmailException(Exception):
+class InvalidEmailException(Exception):
+    pass
 
 def insert_data(values:list[any]=None):
     conn = psycopg2.connect(os.environ['POSTGRESQL_TOKEN'])
     with conn:
         with conn.cursor() as cursor:
             sql='''
-
+            INSERT INTO 使用者(姓名, 性別, 聯絡電話, 電子郵件, isgetemail,出生年月日, 自我介紹, 密碼, 連線密碼) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)
             '''
             try:
                 cursor.execute(sql,values)
             except UniqueViolation:
-                raise invalidEmailException
+                raise InvalidEmailException
             except Exception:
                 raise RuntimeError
     conn.close(
